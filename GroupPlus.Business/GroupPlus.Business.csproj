@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C40AF5F5-33C6-493B-9440-CD727688111B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GroupPlus.Business</RootNamespace>
+    <AssemblyName>GroupPlus.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers">
+      <HintPath>..\..\..\Cloud\GroupPlusStacks\GroupPlus.Business\bin\Release\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql.EntityFramework">
+      <HintPath>..\Dll\Npgsql.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql.EntityFrameworkLegacy">
+      <HintPath>..\Dll\Npgsql.EntityFrameworkLegacy.dll</HintPath>
+    </Reference>
+    <Reference Include="PlugPortalManager">
+      <HintPath>..\Dll\PlugPortalManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\Dll\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPLUG.WEBTOOLS">
+      <HintPath>..\Dll\XPLUG.WEBTOOLS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\EncryptionHelper.cs" />
+    <Compile Include="Core\HelperMethods.cs" />
+    <Compile Include="Core\IDGenerator.cs" />
+    <Compile Include="Core\ItemComparers\AddressComparer.cs" />
+    <Compile Include="DataManager\EntityValidatorHelper.cs" />
+    <Compile Include="DataManager\MigConfig.cs" />
+    <Compile Include="DataManager\ModelAssistance.cs" />
+    <Compile Include="DataManager\PlugModel.cs" />
+    <Compile Include="Infrastructure\Contract\IGeneric.cs" />
+    <Compile Include="Infrastructure\Contract\IPlugContext.cs" />
+    <Compile Include="Infrastructure\Contract\IPlugRepository.cs" />
+    <Compile Include="Infrastructure\Contract\IPlugUoWork.cs" />
+    <Compile Include="Infrastructure\GenericRepository.cs" />
+    <Compile Include="Infrastructure\PlugContext.cs" />
+    <Compile Include="Infrastructure\PlugRepository.cs" />
+    <Compile Include="Infrastructure\PlugUoWork.cs" />
+    <Compile Include="Migrations\201901161950400_MigrationX1.cs" />
+    <Compile Include="Migrations\201901161950400_MigrationX1.Designer.cs">
+      <DependentUpon>201901161950400_MigrationX1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Common\BankRepository.cs" />
+    <Compile Include="Repository\Common\ClassOfAwardRepository.cs" />
+    <Compile Include="Repository\Common\CourseOfStudyRepository.cs" />
+    <Compile Include="Repository\Common\DisciplineRepository.cs" />
+    <Compile Include="Repository\Common\InstitutionRepository.cs" />
+    <Compile Include="Repository\Common\InsurancePolicyTypeRepository.cs" />
+    <Compile Include="Repository\Common\JobLevelRepository.cs" />
+    <Compile Include="Repository\Common\JobPositionRepository.cs" />
+    <Compile Include="Repository\Common\JobSpecializationRepository.cs" />
+    <Compile Include="Repository\Common\JobTypeRepository.cs" />
+    <Compile Include="Repository\Common\KPIndexRepository.cs" />
+    <Compile Include="Repository\Common\LeaveTypeRepository.cs" />
+    <Compile Include="Repository\Common\PensionAdministratorRepository.cs" />
+    <Compile Include="Repository\Common\ProfessionalBodyRepository.cs" />
+    <Compile Include="Repository\Common\ProfessionalMemshipTypeRepository.cs" />
+    <Compile Include="Repository\Common\QualificationRepository.cs" />
+    <Compile Include="Repository\Common\SalaryGradeRepository.cs" />
+    <Compile Include="Repository\Common\SalaryLevelRepository.cs" />
+    <Compile Include="Repository\Common\SerialNumberKeeperRepository.cs" />
+    <Compile Include="Repository\Common\TerminationReasonRepository.cs" />
+    <Compile Include="Repository\Common\WorkFlowOrderItemRepository.cs" />
+    <Compile Include="Repository\Common\WorkFlowOrderRepository.cs" />
+    <Compile Include="Repository\CompanyManagement\CompanyRepository.cs" />
+    <Compile Include="Repository\CompanyManagement\DepartmentRepository.cs" />
+    <Compile Include="Repository\StaffManagement\StaffLeaveRepository.cs" />
+    <Compile Include="Repository\StaffManagement\StaffManagementHelperQuery.cs" />
+    <Compile Include="Repository\StaffManagement\StaffMemoRepository.cs" />
+    <Compile Include="Repository\StaffManagement\StaffOperationRepository.cs" />
+    <Compile Include="Repository\StaffManagement\StaffRepository.cs" />
+    <Compile Include="Repository\StaffManagement\StaffRoleRepository.cs" />
+    <Compile Include="Services\APIServiceManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GroupPlus.BusinessContract\GroupPlus.BusinessContract.csproj">
+      <Project>{A1337C36-0149-4683-AECE-23CC71C10CAB}</Project>
+      <Name>GroupPlus.BusinessContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GroupPlus.BusinessObject\GroupPlus.BusinessObject.csproj">
+      <Project>{72BE2AED-EB77-491D-9EA7-47F7568A95EE}</Project>
+      <Name>GroupPlus.BusinessObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GroupPlus.Common\GroupPlus.Common.csproj">
+      <Project>{ecfc4311-5b8c-4bf5-8049-6709128d7bf6}</Project>
+      <Name>GroupPlus.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901161950400_MigrationX1.resx">
+      <DependentUpon>201901161950400_MigrationX1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
